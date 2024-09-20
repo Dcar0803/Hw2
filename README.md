@@ -37,23 +37,23 @@ Test.cpp using Assert:
 
 ### Test Case 1: Simple Lowercase String
 
-Input: "hello world"
-Expected Output: The most common character is 'L' which appears 3 times.
+1. Input: "hello world"
+2. Expected Output: The most common character is 'L' which appears 3 times.
 
 ### Test Case 2: String with Spaces and Uppercase
 
-Input: "This is a test"
-Expected Output: The most common character is ' ' which appears 3 times.
+1. Input: "This is a test"
+2. Expected Output: The most common character is ' ' which appears 3 times.
 
 ### Test Case 3: All Same Characters
 
-Input: "aaaaaa"
-Expected Output: The most common character is 'A' which appears 6 times.
+1. Input: "aaaaaa"
+2. Expected Output: The most common character is 'A' which appears 6 times.
 
 ### Test Case 4: Mixed Characters and Numbers
 
-Input: "abc123abc"
-Expected Output: The most common character is 'A' which appears 2 times.
+1. Input: "abc123abc"
+2. Expected Output: The most common character is 'A' which appears 2 times.
 
 -------------------------------------------------------------------------------------------------------------------------------
 
