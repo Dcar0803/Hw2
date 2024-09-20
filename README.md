@@ -28,36 +28,36 @@ You will be prompted to enter a string in the console, and the program will outp
 
 ----------------------------------------------------------------------------------------------
 
-###Test Cases
+### Test Cases
 1. The C++ libraries that I tried Catch2 and GoogleTest were not working properly on my device. I use assert. It tests a given condition and, if that condition evaluates to false, it triggers an error.
 
 Test.cpp using Assert: 
-**If the condition is true, the program continues executing as normal.
-**If the condition is false, the program terminates immediately, and an error message is printed to the standard error output. This message typically includes the failed expression, the name of the file, and the line number where the assertion failed.
+         1. If the condition is true, the program continues executing as normal.
+         2. If the condition is false, the program terminates immediately, and an error message is printed to the standard error output. This message typically includes the failed expression, the name of the file, and the line number where the assertion failed.
 
-###Test Case 1: Simple Lowercase String
+### Test Case 1: Simple Lowercase String
 
 Input: "hello world"
 Expected Output: The most common character is 'L' which appears 3 times.
 
-###Test Case 2: String with Spaces and Uppercase
+### Test Case 2: String with Spaces and Uppercase
 
 Input: "This is a test"
 Expected Output: The most common character is ' ' which appears 3 times.
 
-###Test Case 3: All Same Characters
+### Test Case 3: All Same Characters
 
 Input: "aaaaaa"
 Expected Output: The most common character is 'A' which appears 6 times.
 
-###Test Case 4: Mixed Characters and Numbers
+### Test Case 4: Mixed Characters and Numbers
 
 Input: "abc123abc"
 Expected Output: The most common character is 'A' which appears 2 times.
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-###Running the Tests
+### Running the Tests
 1. Compile tests.cpp:  g++ -o test tests.cpp
 
 2. After compilation, run the program with:
