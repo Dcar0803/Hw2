@@ -3,56 +3,73 @@
 #include <cctype>
 using namespace std;
 
-//A function that finds the most common character from the user input string
-void findMostCommonCharacter(const std::string& input){
+/**
+ * @brief Finds and prints the most common character from the input string.
+ * 
+ * This function counts the frequency of each character (ASCII range 0-127) in the input string,
+ * identifies the character with the highest frequency, and prints it along with its occurrence count.
+ * 
+ * @param input The string input provided by the user. The function treats the string in a case-insensitive
+ * manner by converting characters to uppercase during counting.
+ * 
+ * @return void This function doesn't return any value. It directly prints the most common character
+ * and its frequency to the standard output.
+ * 
+ * @throws None This function does not explicitly throw any exceptions.
+ */
+void findMostCommonCharacter(const std::string& input) {
+    // Array to count the occurrences of each character (ASCII range 0-127)
+    int indexes[128] = {0}; // Initialize the array with zeros.
 
-    int indexes[128] = {0}; //Zero in range 128 
+    // Iterate over each character in the input string
+    for (char character : input) {
+        // Convert character to uppercase to make the counting case-insensitive
+        char upperChar = toupper(character);  
+        // Increment the corresponding index for the character
+        indexes[(int)character]++; 
+    }
 
-    //Iterate over each character 
-
-    //Creating for iterating over character in the string variable var
-    for (char character : input){ //for each character 'character' in string variable 'var'
-        char upperChar = toupper(character);  // Convert to uppercase
-        indexes[(int)character] ++; // ++ is a shorcut for +=1
-    }//end of for loop
-
-    //Find character with highest counter
+    // Variables to track the character with the highest count
     int max_index = 0;
-    int max_counter = 0; //this counts the amount the character is seen 
-    
-    //Using a for loop to look for the highest counter in the range of 128 of indexes
-    for (int i = 0; i < 128; i++){
-        if (indexes[i]> max_counter){
-            max_counter = indexes[i];
-            max_index = i;
+    int max_counter = 0; // Counts the frequency of the most common character
 
-        }//end of if statement
+    // Iterate over the array to find the character with the highest frequency
+    for (int i = 0; i < 128; i++) {
+        if (indexes[i] > max_counter) {
+            max_counter = indexes[i]; // Update the highest count
+            max_index = i; // Update the index of the most frequent character
+        }
+    }
 
-    }//end of for loop 
-
-    //Print character 
-
-    //Creating a variable most_common that tells the 
+    // Cast the max_index back to char to get the most common character
     char most_common = (char)max_index;
 
-    std::cout << "The most common character is " << most_common << " which appears " << max_counter << " times." << std::endl;
+    // Print the result: most common character and its frequency
+    std::cout << "The most common character is " << most_common 
+              << " which appears " << max_counter << " times." << std::endl;
+}
 
-
-}//end of findMostCommonCharacter function
-
-int main(){
-
-    //Ask user for string 
+/**
+ * @brief The main function that drives the program.
+ * 
+ * It prompts the user to enter a string, and then calls the `findMostCommonCharacter`
+ * function to analyze the string and print the most common character.
+ * 
+ * @return int Returns 0 upon successful execution.
+ * 
+ * @throws None The program does not explicitly throw any exceptions.
+ */
+int main() {
+    // Declare a string variable to store user input
     std::string var;
-    std::cout << "Enter a string: ";
-    std::getline(std::cin, var);
-
-    //Debugging to see if the entire string was collected
-    //std::cout << var; 
     
-    //Calling the findMostCommonCharacter function
+    // Prompt the user to input a string
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, var); // Read the entire line of input, including spaces
+
+    // Call the function to find the most common character in the user's input
     findMostCommonCharacter(var);
+
+    // Return 0 to indicate successful execution
     return 0;
-
-}//end of main 
-
+}
